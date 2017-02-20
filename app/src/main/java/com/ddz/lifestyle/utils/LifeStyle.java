@@ -35,29 +35,10 @@ public class LifeStyle extends Application {
         if (context == null) {
             context = getApplicationContext();
         }
-        //Bmob初始化
-        Bmob.initialize(this, Constants.APPID);
-        //融云初始化
-        RongIM.init(this);
         LifeStyleAppContext.init(this);
     }
 
 
-    /**
-     * 获取当前运行的进程名
-     * @return
-     */
-    public static String getCurProcessName() {
-        try {
-            File file = new File("/proc/" + android.os.Process.myPid() + "/" + "cmdline");
-            BufferedReader mBufferedReader = new BufferedReader(new FileReader(file));
-            String processName = mBufferedReader.readLine().trim();
-            mBufferedReader.close();
-            return processName;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
+
 
 }

@@ -127,7 +127,7 @@ public class FileUtils {
 
 
     public String getPhotoPathForLockWallPaper() {
-        String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/fotoweather/lock/wallpaper";
+        String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/ddz/img";
         File file = new File(path);
         if (!file.getParentFile().exists()) {
             mkdir(file.getParentFile());
@@ -135,35 +135,11 @@ public class FileUtils {
         if (!file.exists()) {
             mkdir(file);
         }
-        return Environment.getExternalStorageDirectory().getAbsolutePath() + "/fotoweather/wallpaper";
+        return Environment.getExternalStorageDirectory().getAbsolutePath() + "/ddz/img";
 //        return Environment.getExternalStorageDirectory().getAbsolutePath() + "/fotoweather/foto weather camera";
     }
 
-    public String getPhotoPathForDCIMCamera() {
-        String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/fotoweather/camera";
-        File file = new File(path);
-        if (!file.getParentFile().exists()) {
-            mkdir(file.getParentFile());
-        }
-        if (!file.exists()) {
-            mkdir(file);
-        }
-        return Environment.getExternalStorageDirectory().getAbsolutePath() + "/fotoweather/camera";
-//        return Environment.getExternalStorageDirectory().getAbsolutePath() + "/fotoweather/foto weather camera";
-    }
 
-    public String getPotoPathForFotoCamera() {
-        String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/fotoweather/camera";
-        File file = new File(path);
-        if (!file.getParentFile().exists()) {
-            mkdir(file.getParentFile());
-        }
-        if (!file.exists()) {
-            mkdir(file);
-        }
-        return Environment.getExternalStorageDirectory().getAbsolutePath() + "/fotoweather/camera";
-//        return Environment.getExternalStorageDirectory().getAbsolutePath() + "/fotoweather/foto weather camera";
-    }
 
 
     private FileUtils() {
@@ -171,12 +147,12 @@ public class FileUtils {
         //如果没SD卡则放缓存
         if (Environment.MEDIA_MOUNTED.equals(sdcardState)) {
             BASE_PATH = Environment.getExternalStorageDirectory().getAbsolutePath()
-                    + "/fotoweather/";
+                    + "/ddz/";
         } else {
 //            BASE_PATH = App.getInstance().getCacheDirPath();
         }
 
-        STICKER_BASE_PATH = BASE_PATH + "/fotoweather/";
+        STICKER_BASE_PATH = BASE_PATH + "/ddz/";
     }
 
     public boolean createFile(File file) {

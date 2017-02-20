@@ -35,7 +35,7 @@
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".activity.SkinActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:launchMode="singleTask"
@@ -46,72 +46,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.MainActivity"
-            android:launchMode="singleTask" />
-        <activity android:name=".activity.ChatActivity" />
-        <activity android:name=".activity.AboutActivity" />
-        <activity android:name=".activity.SettingActivity" />
-        <activity android:name=".activity.SkinActivity" />
-        <activity android:name=".activity.SearchActivity" />
-        <activity android:name=".activity.LoginActivity" />
-
-        <!--融云会话列表-->
-        <activity
-            android:name=".activity.ConversationListActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize">
-
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="com.ddz.lifestyle"
-                    android:pathPrefix="/conversationlist"
-                    android:scheme="rong" />
-            </intent-filter>
-        </activity>
 
 
-        <!--会话界面-->
-        <activity
-            android:name=".activity.ConversationActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize">
 
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="com.ddz.lifestyle"
-                    android:pathPrefix="/conversation/"
-                    android:scheme="rong" />
-            </intent-filter>
-        </activity>
-
-
-        <receiver android:name=".receiver.ConnectRecevier">
-            <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
-                <action android:name="android.net.wifi.STATE_CHANGE" />
-            </intent-filter>
-        </receiver>
-
-        //高德定位加地图
-        <!--<service android:name="com.amap.api.location.APSService"></service>-->
-        <!--<meta-data-->
-        <!--android:name="com.amap.api.v2.apikey"-->
-        <!--android:value="89c06dc7e4afeaec15ec881824355636" />-->
-
-
-        <meta-data
-            android:name="Bmob_APP_KEY"
-            android:value="b9c901888f7688ab1dc0aecfc004b00d" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -123,9 +60,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <meta-data
-            android:name="RONG_CLOUD_APP_KEY"
-            android:value="4z3hlwrv4zmct" />
+
 
     </application>
 </manifest>
