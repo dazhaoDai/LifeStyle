@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6699ff</color>
+    <color name="colorPrimaryDark">#3366cc</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="botton">#33ffffff</color>
+    <color name="textNormal">#33504f4f</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="white">#ffffff</color>
+    <color name="blue">#63bdfd</color>
+    <color name="orange">#fd8463</color>
+    <color name="reset_normal">#8c8c8c</color>
+    <color name="reset_check">#505050</color>
+    <color name="black">#000000</color>
+    <color name="transparent_black_80">#cc000000</color>
+    <color name="down_fragment_alpha">#64000000</color>
+</resources>

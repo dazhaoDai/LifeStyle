@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent_black_80"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/black"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/camera"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/picture"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/done"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_camera"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/black">
+
+
+        <com.isseiaoki.simplecropview.CropImageView xmlns:custom="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/iv_wallpaper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            custom:scv_crop_mode="fit_image"
+            custom:scv_frame_color="@color/white"
+            custom:scv_frame_stroke_weight="3dp"
+            custom:scv_guide_color="@color/white"
+            custom:scv_guide_show_mode="show_on_touch"
+            custom:scv_guide_stroke_weight="1dp"
+            custom:scv_handle_color="@color/white"
+            custom:scv_handle_show_mode="show_always"
+            custom:scv_handle_size="8dp"
+            custom:scv_min_frame_size="100dp"
+            custom:scv_overlay_color="@color/down_fragment_alpha" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_contral"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="30dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="20dp"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_reset"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="14dp"
+            android:layout_weight="2"
+            android:background="@drawable/reset_selector"
+            android:gravity="center"
+            android:text="Reset"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/left_rotate"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="14dp"
+            android:layout_weight="1"
+            android:background="@drawable/wallpaper_selector"
+            android:src="@drawable/rotate_left" />
+
+        <ImageView
+            android:id="@+id/right_rotate"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="14dp"
+            android:layout_weight="1"
+            android:background="@drawable/wallpaper_selector"
+            android:src="@drawable/rotate_right" />
+
+        <ImageView
+            android:id="@+id/up_reversal"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="14dp"
+            android:layout_weight="1"
+            android:background="@drawable/wallpaper_selector"
+            android:src="@drawable/reversal_up" />
+
+        <ImageView
+            android:id="@+id/left_reversal"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/wallpaper_selector"
+            android:src="@drawable/reversal_left" />
+    </LinearLayout>
+
+</LinearLayout>
