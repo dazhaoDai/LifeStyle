@@ -1,10 +1,11 @@
 #### Android手机拍照、剪裁，并非那么简单
-简书地址：<a href="http://www.jianshu.com/u/46cb5df3d852" target="_blank"">[我的简书--T9的第三个三角]
+简书地址：[我的简书--T9的第三个三角](http://www.jianshu.com/u/46cb5df3d852）
 
 - **前言**
 项目中，基本都有用户自定义头像或自定义背景的功能，实现方法一般都是调用系统相机--拍照，或者系统相册--选择照片，然后进行剪裁，最终设为头像或背景。
   而在Android6.0之后，需要动态获取权限，而且Android7.0之后，无法直接根据拍照返回的URI拿到图片，这是因为从安卓7.0开始，直接使用本地真实路径被认为是不安全的，会抛出FileUriExposedExCeption异常，本文就是基于这个功能去针对Android7.0进行操作。
 废话不多说，先把基本的页面建立，先来布局。
+
 - **布局**
 
 ```
@@ -148,11 +149,13 @@
 布局很简单，点击Camera、Picture、Done，分别调用手机拍照、调用系统相册照片、完成操作。
 
 - **调用相机拍照**
+
  Android6.0之前，调用系统拍照，只需要在AndroidManifest.xml声明
- ``` <uses-permission android:name="android.permission.CAMERA" />```
- ``` <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>```
- 权限，而在6.0以后，则需要申请权限，先来调用相机拍照。
-  1.初始化控件，使用ButterKnife，这个简直傻瓜式的完成
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+ 权限，而在6.0以后，不仅需要声明，更需要运行时申请权限，先来调用相机拍照。 
+
+1.初始化控件，使用ButterKnife，这个简直傻瓜式的完成
 ```
    @BindView(R.id.tv_camera)
     TextView tvCamera;
@@ -178,17 +181,17 @@
     ImageView leftReversal;
     @BindView(R.id.ll_contral)
     LinearLayout llContral;
-      private static final int CAMERA_REQUEST_CODE = 1;
+    private static final int CAMERA_REQUEST_CODE = 1;
     private static final int REQUEST_CAPTURE = 2;
     private static final int REQUEST_PICTURE = 5;
     private static final int REVERSAL_LEFT = 3;
     private static final int REVERSAL_UP = 4;
     private Uri imageUri;
-    private Uri localUri = null;
-```
+    private Uri localUri = null;```
 
 2.点击拍照：
-```
+
+	```
 	tvCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -249,6 +252,7 @@
         startActivityForResult(intent, REQUEST_CAPTURE);//启动拍照
     }
 ```
+
 通过FileProvider创建一个content类型的Uri，不仅是通过FileProvider.getUriForFile(SkinActivity.this, "com.ddz.demo", file);而且在AndroidManifest.xml中进行配置，android:authorities要和FileProvider中一样，同时在xml中配置路径
 
 ```
